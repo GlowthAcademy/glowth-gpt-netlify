@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.1.0",
   "info": {
     "title": "Glowth Check-In Logger",
     "description": "Send weekly project updates from GPT to Glowth's automation system via webhook.",
@@ -31,13 +31,8 @@
                   "Priority": { "type": "string" }
                 },
                 "required": [
-                  "Project",
-                  "Week",
-                  "Update Summary",
-                  "Status",
-                  "Blockers",
-                  "Notes",
-                  "Priority"
+                  "Project", "Week", "Update Summary",
+                  "Status", "Blockers", "Notes", "Priority"
                 ]
               }
             }
