@@ -31,13 +31,8 @@
                   "Priority": { "type": "string" }
                 },
                 "required": [
-                  "Project",
-                  "Week",
-                  "Update Summary",
-                  "Status",
-                  "Blockers",
-                  "Notes",
-                  "Priority"
+                  "Project", "Week", "Update Summary",
+                  "Status", "Blockers", "Notes", "Priority"
                 ]
               }
             }
