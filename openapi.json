@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://pmgpts.netlify.app"
+      "url": "https://glowth-gpt-plugin.netlify.app"
     }
   ],
   "paths": {
@@ -31,8 +31,13 @@
                   "Priority": { "type": "string" }
                 },
                 "required": [
-                  "Project", "Week", "Update Summary",
-                  "Status", "Blockers", "Notes", "Priority"
+                  "Project",
+                  "Week",
+                  "Update Summary",
+                  "Status",
+                  "Blockers",
+                  "Notes",
+                  "Priority"
                 ]
               }
             }
