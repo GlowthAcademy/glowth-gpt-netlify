@@ -13,9 +13,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://pmgpts.netlify.app/openapi.json"
+    "url": "https://glowth-gpt-plugin.netlify.app/openapi.json"
   },
-  "logo_url": "https://pmgpts.netlify.app/logo.png",
+  "logo_url": "https://glowth-gpt-plugin.netlify.app/logo.png",
   "contact_email": "hello@glowth.io",
   "legal_info_url": "https://glowth.io/legal"
 }
