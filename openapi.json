@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://glowth-gpt-plugin.netlify.app/"
+      "url": "https://glowth-gpt-plugin.netlify.app"
     }
   ],
   "paths": {
