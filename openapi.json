@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://glowth-gpt-plugin.netlify.app"
+      "url": "https://hook.eu2.make.com/opuoyuo61mhzcxctqknzswh6d5acblc9"
     }
   ],
   "paths": {
@@ -22,13 +22,21 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "Project": { "type": "string" },
-                  "Week": { "type": "string" },
-                  "Update Summary": { "type": "string" },
-                  "Status": { "type": "string" },
-                  "Blockers": { "type": "string" },
-                  "Notes": { "type": "string" },
-                  "Priority": { "type": "string" }
+                  "Project": { "type": "string", "description": "Name of the project" },
+                  "Week": { "type": "string", "description": "Week identifier" },
+                  "Update Summary": { "type": "string", "description": "Brief summary of progress" },
+                  "Status": { 
+                    "type": "string", 
+                    "description": "Project status",
+                    "enum": ["On Track", "At Risk", "Delayed", "Completed"]
+                  },
+                  "Blockers": { "type": "string", "description": "Current blockers or issues" },
+                  "Notes": { "type": "string", "description": "Additional notes" },
+                  "Priority": { 
+                    "type": "string", 
+                    "description": "Priority level",
+                    "enum": ["Low", "Medium", "High", "Critical"]
+                  }
                 },
                 "required": [
                   "Project", "Week", "Update Summary",
@@ -40,7 +48,21 @@
         },
         "responses": {
           "200": {
-            "description": "Update accepted"
+            "description": "Update logged successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - missing required fields"
           }
         }
       }
