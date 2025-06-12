@@ -7,7 +7,77 @@
   },
   "servers": [
     {
+      "url": "{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Glowth Check-In Logger",
+    "description": "Send weekly project updates from GPT to Glowth's automation system via webhook.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
       "url": "https://hook.eu2.make.com/opuoyuo61mhzcxctqknzswh6d5acblc9"
+    }
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Log a project update",
+        "operationId": "logProjectUpdate",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Project": { "type": "string", "description": "Name of the project" },
+                  "Week": { "type": "string", "description": "Week identifier" },
+                  "Update Summary": { "type": "string", "description": "Brief summary of progress" },
+                  "Status": { 
+                    "type": "string", 
+                    "description": "Project status",
+                    "enum": ["On Track", "At Risk", "Delayed", "Completed"]
+                  },
+                  "Blockers": { "type": "string", "description": "Current blockers or issues" },
+                  "Notes": { "type": "string", "description": "Additional notes" },
+                  "Priority": { 
+                    "type": "string", 
+                    "description": "Priority level",
+                    "enum": ["Low", "Medium", "High", "Critical"]
+                  }
+                },
+                "required": [
+                  "Project", "Week", "Update Summary",
+                  "Status", "Blockers", "Notes", "Priority"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update logged successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - missing required fields"
+          }
+        }
+      }
+    }
+  }
+}"
     }
   ],
   "paths": {
